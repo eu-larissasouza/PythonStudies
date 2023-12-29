@@ -46,4 +46,4 @@ O presente repositório é dedicado à minha jornada contínua de aprendizado em
 
 ## Licença
 
-Este repositório está licenciado sob a Licença MIT - veja a [Licença](LICENSE.md) para mais detalhes.
+Este repositório está licenciado sob a Licença MIT - veja a [Licença](LICENSE.MD) para mais detalhes.
