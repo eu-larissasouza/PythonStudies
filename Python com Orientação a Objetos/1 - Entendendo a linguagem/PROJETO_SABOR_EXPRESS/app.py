@@ -15,7 +15,7 @@ import os
 ## Aspas simples ou duplas: Escolha uma Convenção em cada projeto.
 ## Aspas triplas (usando simples ou duplas): Se queremos que a quebra de linha seja mantida no terminal
 
-## Site FSymbols: Pode ser usado para adicionar formatação diferentes a titulo 
+## Site FSymbols: Pode ser usado para adicionar formatação diferentes a titulo
 ## É uma ideia, pois adiciona fontes chamativas e/ou engraçadas ao terminal.
 ## ------
 
@@ -42,7 +42,7 @@ import os
 ## como valores do tipo Strings e como é uma linguagem fortemente tipada
 ## não tem como comparar valores de tipos diferentes
 
-## Para verificar o tipo, usamos a função type(): 
+## Para verificar o tipo, usamos a função type():
 ## print(type(opcao_escolhida))
 
 ## Lembrete: ELIF - equivalente ao else if em outras linguagens
@@ -59,7 +59,7 @@ import os
 
 ## Usamos o def que é uma notação para "definir" a função
 
-## Além disso, podemos utilizar algumas funções embutidas do Python. 
+## Além disso, podemos utilizar algumas funções embutidas do Python.
 ## No entanto, quando instalamos o Python na nossa máquina, ele também nos dá
 ## acesso a algumas bibliotecas com códigos prontos para utilizar.
 ## Uma dessas bibliotecas é a Biblioteca os.
@@ -70,53 +70,33 @@ import os
 
 ## Antes de criar essas opções, é importante entender que quando criamos
 ## um arquivo com a extensão .py, podemos ter indicar para o Python que
-## esse é o arquivo principal do programa e garantir que ele não seja 
+## esse é o arquivo principal do programa e garantir que ele não seja
 ## importado por outros arquivos Python para que seja executado,
 ## assim como fizemos com o import os.
-      
+
 ## Quando pedimos para que um programa Python seja executado, o interpretador
 ## cria uma variável chamada __name__ e podemos definir o programa como principal
 ## se o __name__ for __main__ (principal, em inglês),
 
 ## Assim, quando o Python executar e verificar que este arquivo aqui é o __main__,
-## queremos que uma sequência de ações seja executada ou seja, a função main() terá 
+## queremos que uma sequência de ações seja executada ou seja, a função main() terá
 ## todos os passos que precisamos para que o nosso programa funcione
-## ================================================================
+## ------
 
 
-def exibir_nome_do_programa():
-      print("""
-░█▀▀▀█ █▀▀█ █▀▀▄ █▀▀█ █▀▀█ 　 ░█▀▀▀ █─█ █▀▀█ █▀▀█ █▀▀ █▀▀ █▀▀ 
-─▀▀▀▄▄ █▄▄█ █▀▀▄ █──█ █▄▄▀ 　 ░█▀▀▀ ▄▀▄ █──█ █▄▄▀ █▀▀ ▀▀█ ▀▀█ 
-░█▄▄▄█ ▀──▀ ▀▀▀─ ▀▀▀▀ ▀─▀▀ 　 ░█▄▄▄ ▀─▀ █▀▀▀ ▀─▀▀ ▀▀▀ ▀▀▀ ▀▀▀
-      """)
-
-
-def exibir_opcoes():
-      print("1. Cadastrar Restaurante")
-      print("2. Listar Restaurante")
-      print("3. Ativar Restaurante")
-      print("4. Sair da aplicação\n")
-
-
-def finalizar_app():
-      os.system("cls") ## Limpando o console
-      print("Encerrando programa....\n")
-
-## ================================================================
 ## INSTRUÇÃO MATCH
 
-## Outra alternativa para o padrão if elif else é a função match que é a 
+## Outra alternativa para o padrão if elif else é a função match que é a
 ## abordagem correspondente ao switch(case) presente em muitas outras
 ## linguagens de programação
-      
+
 ## Oferece uma abordagem mais elegante para a correspondência de padrões em dados.
-## Essa adição não apenas simplifica a lógica do código, mas também proporciona 
+## Essa adição não apenas simplifica a lógica do código, mas também proporciona
 ## uma alternativa expressiva e legível às construções tradicionais de controle
 ## de fluxo, que são necessários para adaptar o comportamento do programa.
-      
-## Estrutura básica:  
-      
+
+## Estrutura básica:
+
 # match expressão:
 #     case padrão_1:
 #         # Código a ser executado se expressão corresponder a padrão_1
@@ -124,29 +104,123 @@ def finalizar_app():
 #         # Código a ser executado se expressão corresponder a padrão_2
 #     # ... outros casos ...
 #     case _:
-#         # Código a ser executado se nenhum dos padrões anteriores corresponder. Isso é útil para tratar casos não específicos.
+#         # Código a ser executado se nenhum dos padrões anteriores corresponder.
+#         # Isso é útil para tratar casos não específicos.
 ## ================================================================
-      
+
+
+## ================================================================
+## AULA 03: LISTAS, LAÇOS E EXCEÇÕES
+
+## ERROS
+
+## Analisando e testando o programa, é possível identificar um problema
+## na iteração que define ações para cada opção escolhida, o que lança um
+## erro caso o usuário informe uma opção inválida, portanto a primeira coisa
+## a ser feita é especificar que o app deve ser finalizado somente se for 4.
+
+## TRY EXCEPT:
+
+## Bloco try: permite testar um bloco de código em busca de erros.
+## Bloco except: permite lidar com o erro.
+## Bloco else: permite executar código quando não há erro.
+## Bloco finally: executa código independentemente do resultado nos blocos try e except.
+
+## LISTAS:
+
+## Quando desejamos armazenar uma coleção de dados, podemos criar uma lista e
+## diferente de outras linguagens em que é necessário especificar o tipo de
+## dados para a lista, mas no Python não.
+
+## Para adicionar um elemento na lista, utilizamos o append.
+## ================================================================
+
+restaurantes = []
+
+
+def exibir_nome_do_programa():
+    print(
+        """
+░█▀▀▀█ █▀▀█ █▀▀▄ █▀▀█ █▀▀█ 　 ░█▀▀▀ █─█ █▀▀█ █▀▀█ █▀▀ █▀▀ █▀▀ 
+─▀▀▀▄▄ █▄▄█ █▀▀▄ █──█ █▄▄▀ 　 ░█▀▀▀ ▄▀▄ █──█ █▄▄▀ █▀▀ ▀▀█ ▀▀█ 
+░█▄▄▄█ ▀──▀ ▀▀▀─ ▀▀▀▀ ▀─▀▀ 　 ░█▄▄▄ ▀─▀ █▀▀▀ ▀─▀▀ ▀▀▀ ▀▀▀ ▀▀▀
+      """
+    )
+
+
+def exibir_opcoes():
+    print("1. Cadastrar Restaurante")
+    print("2. Listar Restaurante")
+    print("3. Ativar Restaurante")
+    print("4. Sair da aplicação\n")
+
+
+def exibir_subtitulo(texto):
+    os.system("cls")  ## Limpando o console
+    print(f"{texto}\n")
+
+
+def voltar_ao_menu():
+    input("\nDigite qualquer tecla para voltar ao menu.\n")
+    main()
+
+
+def cadastrar_novo_restaurante():
+    ## Lista simples com apenas o nome dos restaurantes.
+    exibir_subtitulo("Cadastro de Novos Restaurantes.")
+
+    nome_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
+    restaurantes.append(nome_restaurante)
+
+    print(f"\nRestaurante {nome_restaurante} cadastrado com sucesso!\n")
+    voltar_ao_menu()
+
+
+def listar_restaurantes():
+    exibir_subtitulo("Listando os Restaurantes")
+
+    # Usando a estrutura de repetição for
+    for restaurante in restaurantes:
+        print(f"{restaurante}")
+
+    voltar_ao_menu()
+
+
+def finalizar_app():
+    exibir_subtitulo("Encerrando programa....")
+
+
+def opcao_invalida():
+    print("\nA opção informada é inválida!\n")
+    voltar_ao_menu()
+
 
 def escolher_opcao():
-      ## Variavel para armazenar opção - Valor inteiro
-      opcao_escolhida = int(input("Escolha uma opção: "))
+    try:
+        ## Variavel para armazenar opção - Valor inteiro
+        opcao_escolhida = int(input("Escolha uma opção: "))
 
-      if opcao_escolhida == 1:
-            print("Cadastrar restaurante")
-      elif opcao_escolhida == 2:
-            print("Listar Restaurante")
-      elif opcao_escolhida == 3:
-            print("Ativar Restaurante")
-      else:
-            finalizar_app()
+        match opcao_escolhida:
+            case 1:
+                cadastrar_novo_restaurante()
+            case 2:
+                listar_restaurantes()
+            case 3:
+                print("Ativar Restaurante")
+            case 4:
+                finalizar_app()
+            case _:
+                opcao_invalida()
+    except:
+        opcao_invalida()
 
-      
+
 def main():
-      exibir_nome_do_programa()
-      exibir_opcoes()
-      escolher_opcao()
+    os.system("cls")  ## Garante que a tela esteja limpa ao iniciar.
+    exibir_nome_do_programa()
+    exibir_opcoes()
+    escolher_opcao()
 
 
 if __name__ == "__main__":
-      main()
+    main()

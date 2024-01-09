@@ -1,16 +1,16 @@
-# Hora da Prática: função condicionais 
+# Hora da Prática: função condicionais
 ## Lista 02 de Exercicios
 
 # 1 - Solicite ao usuário que insira um número e, em seguida, use uma estrutura
 # if else para determinar se o número é par ou ímpar..
-# print("\nExercício 01 ========================================================")
+print("\nExercício 01 ========================================================")
 
 numero = int(input("Informe um número: "))
 
 if (numero % 2) == 0:
-  print(f"\nO número {numero} é par\n")
+    print(f"\nO número {numero} é par\n")
 else:
-  print(f"\nO número {numero} é ímpar\n")
+    print(f"\nO número {numero} é ímpar\n")
 
 
 # 2 - Pergunte ao usuário sua idade e, com base nisso, use uma estrutura if elif else para
@@ -25,17 +25,16 @@ print("\nExercício 02 ========================================================"
 idade = int(input("Qual sua idade: "))
 
 if 0 < idade <= 12:
-  print("\nVocê é uma criança!\n")
+    print("\nVocê é uma criança!\n")
 elif 12 < idade <= 18:
-  print("\mVocê é um adolescente!\n")
+    print("\mVocê é um adolescente!\n")
 elif idade >= 18:
-  print("\nVocê é um adulto!\n")
+    print("\nVocê é um adulto!\n")
 else:
-  print("\nIdade Inválida!\n")
+    print("\nIdade Inválida!\n")
 
 
-
-# 3 - Solicite um nome de usuário e uma senha e use uma estrutura if else para verificar se o 
+# 3 - Solicite um nome de usuário e uma senha e use uma estrutura if else para verificar se o
 # nome de usuário e a senha fornecidos correspondem aos valores esperados determinados por você.
 
 print("\nExercício 03 ========================================================")
@@ -46,10 +45,10 @@ SENHA = "abc19682X"
 seu_usuario = input("Informe o seu usuário: ")
 sua_senha = input("Informe a sua senha: ")
 
-if (seu_usuario == USUARIO and sua_senha == SENHA):
-  print("\nLogin efetuado com sucesso!\n")
+if seu_usuario == USUARIO and sua_senha == SENHA:
+    print("\nLogin efetuado com sucesso!\n")
 else:
-  print("\nO usuário ou senha informados estão incorretos.\n")
+    print("\nO usuário ou senha informados estão incorretos.\n")
 
 
 # 4 - Solicite ao usuário as coordenadas (x, y) de um ponto qualquer e utilize uma estrutura
@@ -68,12 +67,12 @@ x = int(input("Informe o valor para o eixo X: "))
 y = int(input("Informe o valor para o eixo Y: "))
 
 if x > 0 and y > 0:
-  print(f"\nCoordenadas ({x},{y}) estão localizadas no primeiro quadrante!\n")
+    print(f"\nCoordenadas ({x},{y}) estão localizadas no primeiro quadrante!\n")
 elif x < 0 and y > 0:
-  print(f"\nCoordenadas ({x},{y}) estão localizadas no segundo quadrante!\n")
+    print(f"\nCoordenadas ({x},{y}) estão localizadas no segundo quadrante!\n")
 elif x < 0 and y < 0:
-  print(f"\nCoordenadas ({x},{y}) estão localizadas no terceiro quadrante!\n")
+    print(f"\nCoordenadas ({x},{y}) estão localizadas no terceiro quadrante!\n")
 elif x > 0 and y < 0:
-  print(f"\nCoordenadas ({x},{y}) estão localizadas no quarto quadrante!\n")
+    print(f"\nCoordenadas ({x},{y}) estão localizadas no quarto quadrante!\n")
 else:
-  print(f"\nCoordenadas ({x},{y}) estão localizadas no eixo ou origem!\n")
+    print(f"\nCoordenadas ({x},{y}) estão localizadas no eixo ou origem!\n")
