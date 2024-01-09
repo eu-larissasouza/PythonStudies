@@ -135,7 +135,24 @@ import os
 ## Para adicionar um elemento na lista, utilizamos o append.
 ## ================================================================
 
-restaurantes = []
+
+## ================================================================
+## AULA 04: DICIONÁRIOS
+
+## Apesar de termos uma lista de dados contendo todos os nomes dos
+## restaurantes, existem outras informações importantes que nós
+## precisamos armazenar sobre cada restaurante, como categoria e
+## se ele está (ou não) ativado, portanto utilizaremos a estrutura de
+## dados dicionário e que tem funcionamento semelhante a uma estrutura
+## que conhecemos como chave-valor em outras linguagens de programação.
+
+## ================================================================
+
+
+restaurantes = [
+    {"nome": "Praça", "categoria": "Japonesa", "ativo": False},
+    {"nome": "Pizza Suprema", "categoria": "Italiano", "ativo": True},
+]
 
 
 def exibir_nome_do_programa():
@@ -151,13 +168,17 @@ def exibir_nome_do_programa():
 def exibir_opcoes():
     print("1. Cadastrar Restaurante")
     print("2. Listar Restaurante")
-    print("3. Ativar Restaurante")
+    print("3. Alternar Estado do Restaurante")
     print("4. Sair da aplicação\n")
 
 
 def exibir_subtitulo(texto):
     os.system("cls")  ## Limpando o console
-    print(f"{texto}\n")
+    linha = "-" * 2 * (len(texto))
+    print(linha)
+    print(texto)
+    print(linha)
+    print()
 
 
 def voltar_ao_menu():
@@ -170,7 +191,14 @@ def cadastrar_novo_restaurante():
     exibir_subtitulo("Cadastro de Novos Restaurantes.")
 
     nome_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
-    restaurantes.append(nome_restaurante)
+    categoria = input(f"Digite o nome da categoria do restaurante {nome_restaurante}: ")
+
+    dados_restaurante = {
+        "nome": nome_restaurante.title(),
+        "categoria": categoria.title(),
+        "ativo": False,  # Todo restaurante é criado "inativo"
+    }
+    restaurantes.append(dados_restaurante)
 
     print(f"\nRestaurante {nome_restaurante} cadastrado com sucesso!\n")
     voltar_ao_menu()
@@ -179,9 +207,16 @@ def cadastrar_novo_restaurante():
 def listar_restaurantes():
     exibir_subtitulo("Listando os Restaurantes")
 
+    print(f'{'Nome do restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | Status \n')
+
     # Usando a estrutura de repetição for
     for restaurante in restaurantes:
-        print(f"{restaurante}")
+        nome_restaurante = restaurante["nome"].title()
+        categoria = restaurante["categoria"].title()
+        ativo = f"Ativo" if restaurante["ativo"] is True else "Inativo"
+
+        # Ljust: Função que define quantidade de caracteres a ser adicionado a esquerda
+        print(f"{nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}")
 
     voltar_ao_menu()
 
@@ -192,6 +227,33 @@ def finalizar_app():
 
 def opcao_invalida():
     print("\nA opção informada é inválida!\n")
+    voltar_ao_menu()
+
+
+def alternar_estado_restaurante():
+    exibir_subtitulo("Alterando estado do restaurante")
+
+    nome_restaurante = input(
+        "Digite o nome do restaurante que deseja alterar o estado: "
+    )
+    restaurante_encontrado = False
+
+    for restaurante in restaurantes:
+        if nome_restaurante.upper() == restaurante["nome"].upper():
+            restaurante_encontrado = True
+            restaurante["ativo"] = not restaurante["ativo"]
+
+            ## Operador Ternário em Python
+            mensagem = (
+                f"O restaurante {nome_restaurante.title()} foi ativado com sucesso"
+                if restaurante["ativo"]
+                else f"O restaurante {nome_restaurante.title()} foi desativado com sucesso"
+            )
+            print(mensagem)
+
+    if not restaurante_encontrado:
+        print("O restaurante não foi encontrado.")
+
     voltar_ao_menu()
 
 
@@ -206,7 +268,7 @@ def escolher_opcao():
             case 2:
                 listar_restaurantes()
             case 3:
-                print("Ativar Restaurante")
+                alternar_estado_restaurante()
             case 4:
                 finalizar_app()
             case _:
