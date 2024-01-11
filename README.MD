@@ -24,11 +24,11 @@ O presente repositório é dedicado à minha jornada contínua de aprendizado em
 
 ## Cursos
 
-1. **Formação Python e orientação a objetos - Alura**
+1. **Python: Crie a sua primeira aplicação - Alura**
 
    - Plataforma: Alura
-   - Descrição: Mergulhe na programação orientada a objetos e incorpore boas práticas de codificação em Python.
-   - Status: Em Progresso
+   - Descrição: Mergulhe na programação e dê os primeiros passos de codificação em Python.
+   - Status: Finalizado
 
 <!--2. **Programação em Bancos de Dados com PL/SQL- FIAP ON**
    - Plataforma: FIAP ON

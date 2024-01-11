@@ -149,6 +149,30 @@ import os
 ## ================================================================
 
 
+
+## ================================================================
+## AULA 05: CONSOLIDANDO CONHECIMENTOS
+
+## Uma ferramenta muito interessante que você pode inserir dentro das funções
+## para torná-las mais descritivas são as chamadas docstrings, que tem como
+## objetivo explicar um pouco do que aquela função está fazendo.
+
+## Para criar uma docstring em Python, normalmente ela fica na primeira linha,
+## logo após a definição da função e você pode usar três aspas.
+
+## Um exemplo de docstring para a função cadastrar novo restaurante, seria:
+##  """Essa função é responsável por cadastrar um novo restaurante"""
+
+## Deste modo, qualquer pessoa que ler o código, vai entender o que a função
+## faz, sem precisar analisar todo o código. A pessoa pode simplesmente ler
+## essa frase e entender melhor o que a função faz.
+
+## Além disso, também podemos criar docstrings mais complexas e que apresentem
+## também quais inputs e outputs da função.
+
+## ================================================================
+
+
 restaurantes = [
     {"nome": "Praça", "categoria": "Japonesa", "ativo": False},
     {"nome": "Pizza Suprema", "categoria": "Italiano", "ativo": True},
@@ -156,6 +180,7 @@ restaurantes = [
 
 
 def exibir_nome_do_programa():
+    """ Exibe o nome estilizado do programa na tela """
     print(
         """
 ░█▀▀▀█ █▀▀█ █▀▀▄ █▀▀█ █▀▀█ 　 ░█▀▀▀ █─█ █▀▀█ █▀▀█ █▀▀ █▀▀ █▀▀ 
@@ -166,6 +191,7 @@ def exibir_nome_do_programa():
 
 
 def exibir_opcoes():
+    """ Exibe as opções disponíveis no menu principal """
     print("1. Cadastrar Restaurante")
     print("2. Listar Restaurante")
     print("3. Alternar Estado do Restaurante")
@@ -173,8 +199,14 @@ def exibir_opcoes():
 
 
 def exibir_subtitulo(texto):
+    """ Exibe um subtítulo estilizado na tela 
+    
+    Inputs:
+    - texto: str - O texto do subtítulo
+    """
     os.system("cls")  ## Limpando o console
     linha = "-" * 2 * (len(texto))
+
     print(linha)
     print(texto)
     print(linha)
@@ -182,12 +214,26 @@ def exibir_subtitulo(texto):
 
 
 def voltar_ao_menu():
+    """ Solicita uma tecla para voltar ao menu principal 
+    
+    Outputs:
+    - Retorna ao menu principal
+    """    
     input("\nDigite qualquer tecla para voltar ao menu.\n")
     main()
 
 
 def cadastrar_novo_restaurante():
-    ## Lista simples com apenas o nome dos restaurantes.
+    """ Essa função é responsável por cadastrar um novo restaurante 
+    
+    Inputs:
+    - Nome do restaurante
+    - Categoria
+
+    Outputs:
+    - Adiciona um novo restaurante a lista de restaurantes
+
+    """
     exibir_subtitulo("Cadastro de Novos Restaurantes.")
 
     nome_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
@@ -205,6 +251,11 @@ def cadastrar_novo_restaurante():
 
 
 def listar_restaurantes():
+    """ Lista os restaurantes presentes na lista 
+    
+    Outputs:
+    - Exibe a lista de restaurantes na tela
+    """
     exibir_subtitulo("Listando os Restaurantes")
 
     print(f'{'Nome do restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | Status \n')
@@ -221,16 +272,12 @@ def listar_restaurantes():
     voltar_ao_menu()
 
 
-def finalizar_app():
-    exibir_subtitulo("Encerrando programa....")
-
-
-def opcao_invalida():
-    print("\nA opção informada é inválida!\n")
-    voltar_ao_menu()
-
-
 def alternar_estado_restaurante():
+    """ Altera o estado ativo/desativado de um restaurante 
+    
+    Outputs:
+    - Exibe mensagem indicando o sucesso da operação
+    """
     exibir_subtitulo("Alterando estado do restaurante")
 
     nome_restaurante = input(
@@ -257,7 +304,27 @@ def alternar_estado_restaurante():
     voltar_ao_menu()
 
 
+def finalizar_app():
+    """ Exibe mensagem de finalização do aplicativo """
+    exibir_subtitulo("Encerrando programa....")
+
+
+def opcao_invalida():
+    """ Exibe mensagem de opção inválida e retorna ao menu principal 
+    
+    Outputs:
+    - Retorna ao menu principal
+    """
+    print("\nA opção informada é inválida!\n")
+    voltar_ao_menu()
+
+
 def escolher_opcao():
+    """ Solicita e executa a opção escolhida pelo usuário 
+    
+    Outputs:
+    - Executa a opção escolhida pelo usuário
+    """
     try:
         ## Variavel para armazenar opção - Valor inteiro
         opcao_escolhida = int(input("Escolha uma opção: "))
@@ -278,6 +345,7 @@ def escolher_opcao():
 
 
 def main():
+    """ Função principal que inicia o programa """
     os.system("cls")  ## Garante que a tela esteja limpa ao iniciar.
     exibir_nome_do_programa()
     exibir_opcoes()
