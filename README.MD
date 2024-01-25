@@ -13,14 +13,14 @@ Este é meu espaço pessoal para documentar e organizar minha jornada através d
 - [Introdução](#introdução)
 - [Cursos](#cursos)
 - [Python Brasil](#python-brasil)
-- [Projetos](#projetos)
+<!-- - [Projetos](#projetos) -->
 - [Licença](#licença)
 
 ## Introdução
 
 Python é linguagem conhecida por sua sintaxe simplificada, que facilita a leitura e escrita de código. Com um vasto conjunto de bibliotecas abrangendo áreas como desenvolvimento web, Data Science, Machine Learning, automação e jogos, Python oferece uma plataforma rica para exploração criativa.
 
-O presente repositório é dedicado à minha jornada contínua de aprendizado em Python, onde você encontrará conteúdos, desafios e projetos relacionados aos cursos que estou realizando para estudar Análise de Dados.
+O presente repositório é dedicado à minha jornada contínua de aprendizado em Python, onde você encontrará conteúdos, desafios e projetos relacionados aos cursos que estou realizando para estudar essa linguagem.
 
 ## Cursos
 
@@ -30,19 +30,26 @@ O presente repositório é dedicado à minha jornada contínua de aprendizado em
    - Descrição: Mergulhe na programação e dê os primeiros passos de codificação em Python.
    - Status: Finalizado
 
-<!--2. **Programação em Bancos de Dados com PL/SQL- FIAP ON**
-   - Plataforma: FIAP ON
-   - Descrição: Aprenda Programação em Bancos de Dados e como ela proporciona o uso de estruturas que não são do escopo do SQL puro. O curso aborda conceitos de definição de constantes e variáveis, estruturas de decisão, estruturas de repetição e tratamentos de exceção, entre outros.
+2. **Python: aplicando a Orientação a Objetos - Alura**
+
+   - Plataforma: Alura
+   - Descrição: Aplique conhecimentos em orientação a objetos e boas práticas de programação com Python.
    - Status: Em Progresso
--->
+
+<!-- 2. **Formação Python para Data Science - Alura**
+
+   - Plataforma: Alura
+   - Descrição: Um guia de estudos com o passo a passo necessário para quem deseja aprender sobre uma das áreas com mais demanda de profissionais nos últimos anos: a Ciência de Dados.
+   - Status: Em Progresso -->
 
 ## Python Brasil
 
 - Existe uma pasta dedicada a documentar desafios presentes nas listas de exercícios disponíveis no site da comunidade Python Brasil com diferentes dificuldades.
+<!--
 
 ## Projetos
 
-- Em construção
+- Em construção -->
 
 ## Licença
 
